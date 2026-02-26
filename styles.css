@@ -1,0 +1,45 @@
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #e8dcc4;
+}
+
+h1 {
+    color: #1a3a52;
+}
+
+h2, h3 {
+    color: #1a3a52;
+}
+
+p {
+    color: #1a3a52;
+}
+
+.button {
+    background-color: #1a3a52;
+    color: #e8dcc4;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #e8dcc4;
+    color: #1a3a52;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    .button {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+}
