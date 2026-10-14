@@ -412,3 +412,143 @@ def chip(c, x, y, txt, fill=NAVY, color=WHITE, size=34, pad=26, weight="Bold"):
     c.rrect(x, y, tw + pad * 2, size * 1.7, r=size * 0.85, fill=fill)
     c.text(x + pad, y + size * 0.85, txt, weight, size, color, anchor="lm")
     return tw + pad * 2
+
+
+# ======================= ICONOS ADICIONALES (lote 2) =======================
+
+def leaf(c, cx, cy, s=1.0, fill=GREEN):
+    """Brote / planta simple."""
+    c.line([(cx, cy + 60 * s), (cx, cy - 10 * s)], fill=NAVY, width=7 * s)
+    c.ellipse(cx - 30 * s, cy - 20 * s, 34 * s, 20 * s, fill=fill, outline=NAVY, width=3)
+    c.ellipse(cx + 30 * s, cy - 36 * s, 34 * s, 20 * s, fill=fill, outline=NAVY, width=3)
+    c.ellipse(cx, cy + 64 * s, 40 * s, 10 * s, fill="#8B5A2B")
+
+
+def pill(c, cx, cy, w=110, fill=RED):
+    h = w * 0.42
+    c.rrect(cx - w / 2, cy - h / 2, w, h, r=h / 2, fill=WHITE, outline=NAVY, width=4)
+    c.d.pieslice([(cx - w / 2) * S, (cy - h / 2) * S, (cx - w / 2 + h) * S, (cy + h / 2) * S], 90, 270, fill=fill)
+    c.rect(cx - w / 2 + h / 2, cy - h / 2 + 2, w / 2 - h / 2, h - 4, fill=fill)
+    c.rrect(cx - w / 2, cy - h / 2, w, h, r=h / 2, outline=NAVY, width=4)
+    c.line([(cx, cy - h / 2), (cx, cy + h / 2)], fill=NAVY, width=4, round_ends=False)
+
+
+def box(c, cx, cy, w=110, fill="#C99A5B"):
+    c.rect(cx - w / 2, cy - w / 2, w, w, fill=fill, outline=NAVY, width=4)
+    c.rect(cx - 10, cy - w / 2, 20, w, fill="#E9CFA3")
+    c.line([(cx - w / 2, cy - w / 2), (cx + w / 2, cy - w / 2)], fill=NAVY, width=4, round_ends=False)
+
+
+def truck(c, x, y, w=300, color=BLUE):
+    """x,y = esquina inferior izquierda."""
+    h = w * 0.36
+    c.rect(x, y - h, w * 0.66, h, fill=WHITE, outline=NAVY, width=4)
+    c.rrect(x + w * 0.68, y - h * 0.75, w * 0.32, h * 0.75, r=12, fill=color, outline=NAVY, width=4)
+    c.rect(x + w * 0.76, y - h * 0.65, w * 0.14, h * 0.3, fill="#BFE3F5")
+    for wx in (x + w * 0.16, x + w * 0.52, x + w * 0.86):
+        c.ellipse(wx, y + 2, w * 0.06, fill=NAVY)
+        c.ellipse(wx, y + 2, w * 0.025, fill=GREY)
+
+
+def card(c, cx, cy, w=150, fill=BLUE):
+    h = w * 0.63
+    c.rrect(cx - w / 2, cy - h / 2, w, h, r=14, fill=fill, outline=NAVY, width=4)
+    c.rect(cx - w / 2, cy - h * 0.22, w, h * 0.2, fill=NAVY)
+    c.rrect(cx - w * 0.38, cy + h * 0.12, w * 0.26, h * 0.2, r=4, fill=AMBER)
+    c.line([(cx + w * 0.1, cy + h * 0.25), (cx + w * 0.38, cy + h * 0.25)], fill=WHITE, width=5)
+
+
+def laptop(c, cx, cy, w=150, fill=NAVY):
+    h = w * 0.6
+    c.rrect(cx - w * 0.42, cy - h / 2, w * 0.84, h, r=10, fill=fill)
+    c.rect(cx - w * 0.37, cy - h / 2 + 8, w * 0.74, h - 16, fill="#9ED1F0")
+    c.rrect(cx - w / 2, cy + h / 2, w, h * 0.12, r=6, fill=GREY, outline=NAVY, width=3)
+
+
+def briefcase(c, cx, cy, w=130, fill="#8B5A2B"):
+    h = w * 0.7
+    c.rrect(cx - w * 0.2, cy - h / 2 - 14, w * 0.4, 26, r=8, outline=NAVY, width=5)
+    c.rrect(cx - w / 2, cy - h / 2, w, h, r=14, fill=fill, outline=NAVY, width=4)
+    c.rect(cx - w / 2, cy - 4, w, 8, fill=NAVY)
+    c.rrect(cx - 12, cy - 12, 24, 22, r=5, fill=AMBER, outline=NAVY, width=3)
+
+
+def badge(c, cx, cy, r=50, fill=BLUE):
+    pts = []
+    for i in range(12):
+        ang = math.pi * i / 6
+        rr = r if i % 2 == 0 else r * 0.82
+        pts.append((cx + rr * math.cos(ang), cy + rr * math.sin(ang)))
+    c.poly(pts, fill=fill, outline=NAVY, width=3)
+    c.ellipse(cx, cy, r * 0.52, fill=AMBER, outline=NAVY, width=3)
+    star(c, cx, cy, r * 0.34, NAVY, points=5)
+
+
+def handcuffs(c, cx, cy, r=34):
+    c.ellipse(cx - r * 1.2, cy, r, outline=NAVY, width=9)
+    c.ellipse(cx + r * 1.2, cy, r, outline=NAVY, width=9)
+    c.line([(cx - r * 0.2, cy), (cx + r * 0.2, cy)], fill=NAVY, width=8)
+
+
+def family(c, cx, cy, s=1.0):
+    for dx, r, col in ((-34, 20, BLUE), (34, 20, RED), (0, 14, AMBER)):
+        c.ellipse(cx + dx * s, cy - 24 * s + (12 * s if dx == 0 else 0), r * s, fill=SKIN, outline=NAVY, width=3)
+        c.rrect(cx + dx * s - r * s, cy - 2 * s + (12 * s if dx == 0 else 0), 2 * r * s, 48 * s - (12 * s if dx == 0 else 0),
+                r=r * s * 0.8, fill=col)
+
+
+def two_heads(c, cx, cy, s=1.0):
+    for dx, col in ((-30, RED), (30, BLUE)):
+        c.ellipse(cx + dx * s, cy - 18 * s, 22 * s, fill=SKIN, outline=NAVY, width=3)
+        c.rrect(cx + dx * s - 26 * s, cy + 6 * s, 52 * s, 46 * s, r=18 * s, fill=col)
+
+
+def chat(c, cx, cy, w=130, fill=WHITE):
+    c.rrect(cx - w / 2, cy - w * 0.32, w, w * 0.6, r=22, fill=fill, outline=NAVY, width=4)
+    c.poly([(cx - w * 0.25, cy + w * 0.26), (cx - w * 0.35, cy + w * 0.5), (cx - w * 0.05, cy + w * 0.26)], fill=fill)
+    c.line([(cx - w * 0.25, cy + w * 0.27), (cx - w * 0.35, cy + w * 0.5), (cx - w * 0.05, cy + w * 0.27)], fill=NAVY, width=4)
+    for i in (-1, 0, 1):
+        c.ellipse(cx + i * w * 0.22, cy - w * 0.02, 8, fill=NAVY)
+
+
+def moon(c, cx, cy, r=46):
+    c.ellipse(cx, cy, r, fill=AMBER)
+    c.ellipse(cx + r * 0.45, cy - r * 0.25, r * 0.85, fill=NAVY)
+
+
+def ladder(c, x, y, h=200, w=60):
+    c.line([(x, y), (x + 20, y - h)], fill="#8B5A2B", width=8)
+    c.line([(x + w, y), (x + w + 20, y - h)], fill="#8B5A2B", width=8)
+    for i in range(1, 6):
+        t = i / 6
+        c.line([(x + 20 * t, y - h * t), (x + w + 20 * t, y - h * t)], fill="#8B5A2B", width=6)
+
+
+def stop_hand(c, cx, cy, r=60):
+    pts = [(cx + r * math.cos(math.pi / 8 + i * math.pi / 4), cy + r * math.sin(math.pi / 8 + i * math.pi / 4))
+           for i in range(8)]
+    c.poly(pts, fill=RED, outline=NAVY, width=4)
+    c.text(cx, cy, "NO", "ExtraBold", int(r * 0.85), WHITE, anchor="mm")
+
+
+def clock(c, cx, cy, r=50):
+    c.ellipse(cx, cy, r, fill=WHITE, outline=NAVY, width=5)
+    c.line([(cx, cy), (cx, cy - r * 0.6)], fill=NAVY, width=5)
+    c.line([(cx, cy), (cx + r * 0.45, cy + r * 0.2)], fill=RED, width=5)
+
+
+def lock(c, cx, cy, w=90, fill=AMBER):
+    c.arc(cx, cy - w * 0.3, w * 0.32, 180, 360, fill=NAVY, width=9)
+    c.rrect(cx - w / 2, cy - w * 0.2, w, w * 0.75, r=12, fill=fill, outline=NAVY, width=4)
+    c.ellipse(cx, cy + w * 0.12, 9, fill=NAVY)
+
+
+def sheet_stack(c, cx, cy, w=110, h=140, fill=WHITE):
+    for k in (2, 1, 0):
+        document(c, cx + k * 14, cy - k * 10, w, h, lines=3 if k == 0 else 0)
+
+
+def pencil_sign(c, cx, cy, w=130):
+    document(c, cx, cy, w, w * 1.2, lines=3)
+    c.line([(cx - w * 0.2, cy + w * 0.5), (cx + w * 0.35, cy + w * 0.05)], fill=AMBER, width=12)
+    c.poly([(cx - w * 0.28, cy + w * 0.6), (cx - w * 0.22, cy + w * 0.46), (cx - w * 0.12, cy + w * 0.56)], fill=NAVY)

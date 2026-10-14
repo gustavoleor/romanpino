@@ -79,7 +79,7 @@ SLIDES = [
                   "Pena atenuada"],
          pena=["Reclusión de 3 a 6 años", "o prisión de 1 a 3 años"]),
     dict(id="d04-homicidio-culposo", cat=PERSONAS, title="Homicidio culposo",
-         art="Arts. 84 y 84 bis CP", scene=sc.s_culposo, kind="side", verif=True,
+         art="Arts. 84 y 84 bis CP", scene=sc.s_culposo, kind="side", ok=True,
          bullets=["No quiere matar, pero no se cuida",
                   "Con vehículo: art. 84 bis",
                   "Agrava: fuga, alcohol, exceso de velocidad, +1 víctima"],

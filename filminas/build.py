@@ -3,8 +3,9 @@
 import os, sys
 from PIL import Image, ImageDraw
 from kit import *
-from slides import SLIDES
+from slides_all import SLIDES
 import scenes as sc
+from kit import AMBER_D, GREEN, check, warning
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "salida")
 JPG = os.path.join(OUT, "jpg")
@@ -28,27 +29,54 @@ def round_corners(c, x, y, w, h, r=36):
     c.img.paste(Image.composite(crop, bg, mask), box[:2])
 
 
+def verif_tag(c, s, xr, y):
+    """Etiqueta bajo el artículo: ✔ contrastada / ⚠ sin contrastar (iconos dibujados)."""
+    if s["art"] == "Doctrina":
+        return
+    ok = s.get("ok", False)
+    txt, col = {True: ("norma y pena contrastadas", GREEN),
+                False: ("sin contrastar con el texto vigente", AMBER_D),
+                "parcial": ("norma contrastada · pena sin contrastar", AMBER_D)}[ok]
+    tw = c.text_size(txt, "SemiBold", 22)[0]
+    c.text(xr, y, txt, "SemiBold", 22, col, anchor="ra")
+    ix = xr - tw - 24
+    if ok is True:
+        check(c, ix, y + 14, 13, fill=GREEN)
+    else:
+        warning(c, ix, y + 14, 28, fill=AMBER)
+
+
 def header(c, s, n, total):
     label, col = s["cat"]
     c.rect(0, 0, W, 16, fill=col)
     chip(c, 90, 52, label, fill=col, size=26, pad=22)
-    c.text(90, 128, s["title"], "ExtraBold", 84, NAVY)
+    tsz = 84
+    while c.text_size(s["title"], "ExtraBold", tsz)[0] > W - 180:
+        tsz -= 4
+    c.text(90, 128 + (84 - tsz) * 0.45, s["title"], "ExtraBold", tsz, NAVY)
     aw = c.text_size(s["art"], "Bold", 32)[0] + 56
+    verif_tag(c, s, W - 90 - aw - 24, 70)
     c.rrect(W - 90 - aw, 56, aw, 56, r=28, fill=None, outline=NAVY, width=3)
     c.text(W - 90 - aw / 2, 84, s["art"], "Bold", 32, NAVY, anchor="mm")
     c.text(90, 1032, FOOT, "Regular", 22, GREY)
     c.text(W - 90, 1032, f"{n} / {total}", "Bold", 24, GREY, anchor="ra")
 
 
-def bullets(c, items, x, y, w, col, size=44):
+def bullets(c, items, x, y, w, col, size=44, limit=980):
+    for sz in (size, 40, 36, 33, 30):
+        yy = y
+        for t in items:
+            yy += len(c.wrap(t, "SemiBold", sz, w - 50)) * sz * 1.22 + 26
+        if yy <= limit:
+            break
     for t in items:
-        c.ellipse(x + 14, y + size * 0.62, 14, fill=col)
-        yy = c.paragraph(x + 50, y, t, "SemiBold", size, NAVY, max_w=w - 50, lh=1.22)
+        c.ellipse(x + 14, y + sz * 0.62, 14, fill=col)
+        yy = c.paragraph(x + 50, y, t, "SemiBold", sz, NAVY, max_w=w - 50, lh=1.22)
         y = yy + 26
     return y
 
 
-def pena_badge(c, lines, x, y, w, verif=False):
+def pena_badge(c, lines, x, y, w):
     n = len(lines)
     h = 74 + n * 58
     no_pena = lines == ["No es punible"]
@@ -56,9 +84,7 @@ def pena_badge(c, lines, x, y, w, verif=False):
     c.rrect(x, y, w, h, r=26, fill=col)
     c.text(x + 36, y + 20, "RESULTADO" if no_pena else "PENA", "Bold", 24, "#C9D3E6", anchor="la")
     for i, ln in enumerate(lines):
-        c.text(x + 36, y + 62 + i * 58, ln, "ExtraBold", 38 if len(ln) < 34 else 32, WHITE)
-    if verif:
-        c.text(x + w - 24, y + 22, "✔ contrastada", "SemiBold", 22, AMBER, anchor="ra")
+        c.text(x + 36, y + 62 + i * 58, ln, "ExtraBold", 38 if len(ln) < 30 else (32 if len(ln) < 36 else 28), WHITE)
 
 
 def render(s, n, total):
@@ -73,10 +99,10 @@ def render(s, n, total):
         round_corners(c, px, py, pw, ph)
         bx = 1090
         bw = W - 90 - bx
-        y = bullets(c, s["bullets"], bx, 270, bw, col)
+        hh = (74 + len(pena) * 58) if pena else 0
+        bullets(c, s["bullets"], bx, 270, bw, col, limit=(980 - hh - 24) if pena else 980)
         if pena:
-            hh = 74 + len(pena) * 58
-            pena_badge(c, pena, bx, 980 - hh, bw, s.get("verif", False))
+            pena_badge(c, pena, bx, 980 - hh, bw)
     else:
         px, py, pw, ph = 90, 250, 1740, 520
         c.rrect(px, py, pw, ph, r=36, fill=tint(col))
