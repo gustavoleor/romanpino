@@ -37,11 +37,12 @@ def verif_tag(c, s, xr, y):
     txt, col = {True: ("norma y pena contrastadas", GREEN),
                 False: ("sin contrastar con el texto vigente", AMBER_D),
                 "parcial": ("norma contrastada · pena sin contrastar", AMBER_D),
-                "t84": ("contrastada con t.o. 1984 · reformas sin verificar", TEAL)}[ok]
+                "t84": ("contrastada con t.o. 1984 · reformas sin verificar", TEAL),
+                "o89": ("contrastada con ley original 1989 · reformas sin verificar", TEAL)}[ok]
     tw = c.text_size(txt, "SemiBold", 22)[0]
     c.text(xr, y, txt, "SemiBold", 22, col, anchor="ra")
     ix = xr - tw - 24
-    if ok is True or ok == "t84":
+    if ok is True or ok in ("t84", "o89"):
         check(c, ix, y + 14, 13, fill=GREEN if ok is True else TEAL)
     else:
         warning(c, ix, y + 14, 28, fill=AMBER)

@@ -17,13 +17,12 @@ Requiere Python 3 + Pillow y la tipografía Inter (`/usr/share/fonts/opentype/in
 2. Agregar un `dict` en `slides.py`: título, artículo, hasta 3 viñetas, pena.
 
 ## Control de contenido
-Cada filmina muestra bajo el título una etiqueta:
-- ✔ verde = contrastada con el texto de la ley reformatoria vigente; ✔ turquesa = contrastada con el texto ordenado de 1984 (Decreto 3992/84), sin verificar reformas posteriores; ✔ *norma y pena contrastadas* (cotejadas con el texto legal en InfoLEG),
-⚠ *sin contrastar* (cargadas de memoria) o ⚠ *norma contrastada · pena sin contrastar*. Las de doctrina no llevan etiqueta.
-Se fijan con el campo `ok` de cada filmina en `slides.py` / `slides2.py`.
+Cada filmina muestra bajo el título una etiqueta de contraste (se fija con el campo `ok` en `slides.py` / `slides2.py`):
+- ✔ verde: norma y pena contrastadas con el texto legal (última reforma localizada en InfoLEG).
+- ✔ turquesa: contrastada con el texto ordenado de 1984 (Decreto 3992/84) o con la Ley 23.737 original (1989); reformas posteriores sin verificar.
+- ⚠ ámbar: sin contrastar (cargada de memoria) — hoy solo Arriola (CSJN) y las dudas señaladas en cada lámina.
+Las láminas de doctrina no llevan etiqueta.
 
-Contrastadas con el t.o. 1984 (InfoLEG, Decreto 3992/84): arts. 34, 35, 54, 79, 81, 89 a 91, 149 bis, 150, 162, 164, 172, 173 (incs. 1, 2, 3 y 7) y 183.
-Pendientes de las reformas posteriores: art. 55 (Ley 25.928), art. 58, art. 80 (Leyes 25.601, 25.816, 26.791), art. 173 inc. 16 (Ley 26.388), arts. 125 y 133, Ley 23.737 arts. 11, 14 y 17 a 21, y la cita de Arriola.
-Contrastadas con la ley reformatoria: arts. 84 y 84 bis (Ley 27.347); arts. 119 (Ley 27.352), 120, 128 (Ley 27.436), 131 (Ley 26.904),
-72 (Ley 27.455) y 132 (Ley 26.738); arts. 5, 6, 7, 24, 27, 44, 44 bis y 45 de la Ley 23.737 (Ley 27.302); art. 173 inc. 15 (Ley 25.930).
-**Todo lo demás debe contrastarse con el texto vigente antes de usarse.**
+Fuentes contrastadas: Código Penal t.o. 1984; Leyes 25.928 (art. 55), 25.601, 25.816 y 26.791 (art. 80), 27.347 (arts. 84, 84 bis),
+25.087, 27.352, 27.436, 26.904, 26.738, 27.455 (integridad sexual), 26.842 (no modifica los arts. 125 y 133), 25.930 y 26.388 (art. 173 y 183),
+Ley 23.737 original y Ley 27.302.

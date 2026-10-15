@@ -531,3 +531,64 @@ def s_arriola(c, X, Y, Wd, Ht):
     c.text(X + 660, Y + 255, "Constitución", "Bold", 28, NAVY, anchor="mm")
     house(c, X + 560, gy + 15, w=220, h=200)
     c.text(X + 410, Y + 70, "ACCIONES PRIVADAS", "ExtraBold", 30, NAVY, anchor="mm")
+
+
+# ---------------- Ley 23.737: agravantes, lugar, medidas, difusión, coca
+
+def i_school(c, cx, cy):
+    c.rect(cx - 55, cy - 20, 110, 70, fill=LIGHT, outline=NAVY, width=4)
+    c.poly([(cx - 65, cy - 20), (cx, cy - 62), (cx + 65, cy - 20)], fill=BLUE, outline=NAVY, width=4)
+    c.rect(cx - 12, cy + 12, 24, 38, fill=NAVY)
+
+def i_pregnant(c, cx, cy):
+    person(c, cx, cy + 55, 110, color=TEAL, pose="stand")
+
+
+def s_lugar(c, X, Y, Wd, Ht):
+    gy = ground(c, X, Y, Wd, Ht)
+    house(c, X + 330, gy + 15, w=330, h=300)
+    lock(c, X + 495, gy - 120, 70, fill=GREEN)
+    person(c, X + 160, gy + 8, h=280, color=RED, pose="reach", face="sly")
+    c.text(X + 160, Y + 70, "FACILITA EL LUGAR", "ExtraBold", 28, RED, anchor="mm")
+    c.text(X + 650, Y + 70, "aunque sea gratis", "Bold", 26, NAVY, anchor="mm")
+
+
+def s_curativa(c, X, Y, Wd, Ht):
+    gy = ground(c, X, Y, Wd, Ht)
+    steps = [("CONSUMO PERSONAL", AMBER_D), ("TRATAMIENTO", TEAL), ("SIN PENA", GREEN)]
+    sw = (Wd - 140) / 3
+    for i, (t, col) in enumerate(steps):
+        x = X + 50 + i * (sw + 20)
+        c.rrect(x, Y + 80, sw, 90, r=18, fill=col)
+        c.text(x + sw / 2, Y + 125, t, "ExtraBold", 21, WHITE, anchor="mm")
+        if i < 2:
+            arrow(c, x + sw + 2, Y + 125, x + sw + 18, Y + 125, width=5, head=12)
+    person(c, X + 220, gy + 8, h=270, color=BLUE, face="happy")
+    person(c, X + 600, gy + 8, h=290, color=WHITE, pose="point", face="happy", flip=True)
+    c.rrect(X + 556, gy - 190, 90, 90, r=10, fill=WHITE)
+    c.rect(X + 590, gy - 168, 22, 52, fill=RED)
+    c.rect(X + 575, gy - 153, 52, 22, fill=RED)
+    c.text(X + Wd / 2, Y + 250, "o medida educativa si es experimentador", "Bold", 26, NAVY, anchor="mm")
+
+
+def s_difusion(c, X, Y, Wd, Ht):
+    gy = ground(c, X, Y, Wd, Ht)
+    person(c, X + 170, gy + 8, h=290, color=RED, pose="point", face="sly")
+    speech(c, X + 260, Y + 100, 330, 130, tail="left")
+    c.text(X + 425, Y + 165, "¡Consuman!", "ExtraBold", 36, RED, anchor="mm")
+    for i, dx in enumerate((520, 620, 720)):
+        person(c, X + dx, gy + 8, h=150 + (i % 2) * 20, color=[BLUE, TEAL, AMBER][i], face="scared")
+    c.text(X + Wd / 2, Y + 50, "EN PÚBLICO", "ExtraBold", 30, NAVY, anchor="mm")
+
+
+def s_coca(c, X, Y, Wd, Ht):
+    gy = ground(c, X, Y, Wd, Ht)
+    for dx in (170, 290, 410):
+        leaf(c, X + dx, gy - 60, 1.4)
+    # taza de infusión
+    c.rrect(X + 560, gy - 120, 130, 100, r=18, fill=WHITE, outline=NAVY, width=4)
+    c.arc(X + 700, gy - 70, 36, 270, 90, fill=NAVY, width=8)
+    c.line([(X + 590, gy - 140), (X + 590, gy - 175)], fill=GREY, width=5)
+    c.line([(X + 625, gy - 140), (X + 625, gy - 185)], fill=GREY, width=5)
+    c.text(X + Wd / 2, Y + 70, "EN SU ESTADO NATURAL", "ExtraBold", 32, GREEN, anchor="mm")
+    c.text(X + Wd / 2, Y + 118, "coqueo · masticación · infusión", "Bold", 28, NAVY, anchor="mm")

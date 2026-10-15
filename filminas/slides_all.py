@@ -27,7 +27,8 @@ ORDER = [
     "x11-corrupcion", "x12-cooperacion",
     # Estupefacientes
     "n01-panorama", "n02-comercio", "n03-entrega", "n04-siembra", "n05-introduccion", "n06-organizar",
-    "n07-precursores", "n08-personas-juridicas", "n09-tenencia", "n10-arriola",
+    "n07-precursores", "n08-personas-juridicas", "n09-tenencia", "n10-arriola", "n11-agravantes-art11", "n12-facilitar-lugar",
+    "n13-medidas-curativas", "n14-difusion", "n15-hoja-de-coca",
 ]
 
 assert len(ORDER) == len(set(ORDER)) == len(_BY_ID), (len(ORDER), len(_BY_ID), set(_BY_ID) ^ set(ORDER))
