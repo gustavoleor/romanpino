@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw
 from kit import *
 from slides_all import SLIDES
 import scenes as sc
-from kit import AMBER_D, GREEN, check, warning
+from kit import AMBER_D, GREEN, TEAL, check, warning
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "salida")
 JPG = os.path.join(OUT, "jpg")
@@ -36,12 +36,13 @@ def verif_tag(c, s, xr, y):
     ok = s.get("ok", False)
     txt, col = {True: ("norma y pena contrastadas", GREEN),
                 False: ("sin contrastar con el texto vigente", AMBER_D),
-                "parcial": ("norma contrastada · pena sin contrastar", AMBER_D)}[ok]
+                "parcial": ("norma contrastada · pena sin contrastar", AMBER_D),
+                "t84": ("contrastada con t.o. 1984 · reformas sin verificar", TEAL)}[ok]
     tw = c.text_size(txt, "SemiBold", 22)[0]
     c.text(xr, y, txt, "SemiBold", 22, col, anchor="ra")
     ix = xr - tw - 24
-    if ok is True:
-        check(c, ix, y + 14, 13, fill=GREEN)
+    if ok is True or ok == "t84":
+        check(c, ix, y + 14, 13, fill=GREEN if ok is True else TEAL)
     else:
         warning(c, ix, y + 14, 28, fill=AMBER)
 
