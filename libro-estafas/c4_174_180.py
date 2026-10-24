@@ -1,0 +1,157 @@
+# -*- coding: utf-8 -*-
+from dsl import *
+
+# =====================================================================
+PARTE("Tercera parte", "Defraudaciones agravadas, atenuadas, usura e insolvencia")
+H1("Capítulo 9. Defraudaciones agravadas (art. 174)")
+LEY("Art. 174, encabezado y párrafo final", "Sufrirá prisión de dos a seis años: […] En los casos de los tres incisos precedentes, el culpable, si fuere funcionario o empleado público, sufrirá además inhabilitación especial perpetua.")
+FIG(19, "Las defraudaciones agravadas.")
+P("El art. 174 eleva el **mínimo** de la pena de un mes a **dos años** (el máximo sigue siendo de seis). La consecuencia práctica más relevante es que la pena mínima de dos años **reduce el margen** para soluciones alternativas y, en algunos supuestos, condiciona la procedencia de la condena condicional y de la suspensión del juicio a prueba.")
+OJO("El párrafo final prevé inhabilitación especial perpetua para el funcionario o empleado público «en los casos de los tres incisos precedentes». Ese texto se redactó cuando el artículo tenía cinco incisos (los «tres precedentes» eran los incisos 3, 4 y 5). La Ley 25.602 agregó el inciso 6, lo que generó una duda interpretativa sobre a qué incisos se refiere hoy. Conviene verificar la ubicación exacta del párrafo en el texto oficial.")
+H2("9.1. Inciso 1: fraude de seguros y préstamo a la gruesa")
+LEY("Art. 174 inc. 1", "El que para procurarse a sí mismo o procurar a otro un provecho ilegal en perjuicio de un asegurador o de un dador de préstamo a la gruesa, incendiare o destruyere una cosa asegurada o una nave asegurada o cuya carga o flete estén asegurados o sobre la cual se haya efectuado un préstamo a la gruesa.")
+FICHA([("Sujeto activo", "Cualquier persona (normalmente, el asegurado o alguien en su interés)."),
+       ("Sujeto pasivo", "El asegurador o el dador del préstamo a la gruesa (figura del derecho de la navegación)."),
+       ("Conducta", "Incendiar o destruir la cosa asegurada."),
+       ("Tipo subjetivo", "Dolo + fin de procurarse o procurar a otro un provecho ilegal en perjuicio del asegurador."),
+       ("Consumación", "Con el incendio o la destrucción, realizados con esa finalidad. Es un **delito de peligro**, adelantado: no hace falta cobrar el seguro."),
+       ("Pena", "Prisión de 2 a 6 años.")])
+P("Es una figura de **consumación anticipada**: el legislador castiga el acto de destruir la cosa asegurada con la finalidad de cobrar, sin esperar a que el asegurado haga la denuncia ni a que la aseguradora pague. Si luego el autor denuncia el siniestro y cobra, la estafa posterior queda absorbida o concurre, según la posición que se adopte.")
+P("**Lo que no abarca el inciso.** La **simulación de un robo** (denunciar que el auto fue robado cuando en realidad se lo vendió o se lo escondió) no consiste en incendiar ni destruir: se califica como **estafa o tentativa de estafa** contra la aseguradora (art. 172), en concurso con la falsa denuncia (art. 245) si se denunció un delito inexistente.")
+EJ("Ejemplo",
+   "El dueño de un comercio con deudas contrata un seguro contra incendio por el triple del valor de la mercadería y, dos meses después, provoca un incendio en el depósito. Comete el delito del **art. 174 inc. 1** desde el momento en que incendia con ese fin, aunque todavía no haya reclamado el seguro. Si el incendio crea un peligro común para personas o bienes, concurre con el **incendio** del art. 186.")
+H2("9.2. Inciso 2: abuso de menores o incapaces")
+LEY("Art. 174 inc. 2", "El que abusare de las necesidades, pasiones o inexperiencia de un menor o de un incapaz, declarado o no declarado tal, para hacerle firmar un documento que importe cualquier efecto jurídico, en daño de él o de otro, aunque el acto sea civilmente nulo.")
+FICHA([("Sujeto pasivo", "Un menor de edad o una persona incapaz, declarada o no judicialmente. Hoy debe leerse a la luz del régimen de capacidad del CCyC (arts. 31 y ss.): incluye a las personas con capacidad restringida en el ámbito del acto."),
+       ("Conducta", "Abusar de sus necesidades, pasiones o inexperiencia para hacerle firmar un documento con efectos jurídicos."),
+       ("Medio", "No requiere engaño: basta el **abuso** de la situación de vulnerabilidad."),
+       ("Resultado", "El daño, para él o para otro. No importa que el acto sea civilmente nulo."),
+       ("Pena", "Prisión de 2 a 6 años.")])
+P("Protege a quienes, por su edad o por su condición, tienen disminuida su capacidad de defensa frente a los actos patrimoniales. Que el acto sea nulo civilmente no excluye el delito: la ley se anticipa al daño que esa apariencia de validez puede causar.")
+EJ("Ejemplo",
+   "Un prestamista aprovecha la adicción al juego de un joven de 17 años para hacerle firmar una cesión de su parte en la herencia de su padre a cambio de una suma ínfima, que el joven necesita para pagar deudas de juego. Hay **abuso de las pasiones e inexperiencia de un menor** (art. 174 inc. 2), aunque la cesión sea nula.")
+H2("9.3. Inciso 3: pesas o medidas falsas")
+LEY("Art. 174 inc. 3", "El que defraudare usando de pesas o medidas falsas.")
+P("Es la forma agravada de la defraudación en la cantidad (art. 173 inc. 1). La agravante se funda en el **medio**: la balanza adulterada, el surtidor manipulado o el metro trucado permiten defraudar a un número indeterminado de personas y lesionan la confianza pública en los instrumentos de medición. Requiere perjuicio efectivo: la mera tenencia de pesas falsas es, a lo sumo, una infracción administrativa (Ley de Metrología Legal 19.511).")
+EJ("Ejemplo", "Una estación de servicio calibra sus surtidores para que despachen un 5 % menos del volumen que marcan. Cada venta perjudica a un cliente: hay **defraudación con medidas falsas** (art. 174 inc. 3).")
+H2("9.4. Inciso 4: fraude en la construcción")
+LEY("Art. 174 inc. 4", "El empresario o constructor de una obra cualquiera o el vendedor de materiales de construcción que cometiere, en la ejecución de la obra o en la entrega de los materiales, un acto fraudulento capaz de poner en peligro la seguridad de las personas, de los bienes o del Estado.")
+P("Agrava el fraude en la construcción por el **peligro** que genera. El sujeto activo es calificado (empresario, constructor o vendedor de materiales) y el acto fraudulento debe ser **capaz de poner en peligro** la seguridad de personas, bienes o del Estado. No hace falta que el daño se produzca: es un delito de **peligro concreto**. Si se produce un derrumbe con víctimas, concurren los delitos contra la vida o la integridad física y los de peligro común.")
+EJ("Ejemplo", "Un constructor reemplaza el hierro estructural de 12 mm especificado en los planos por hierro de 8 mm en las columnas de un edificio de departamentos y cobra la diferencia. La estructura queda en riesgo de colapso. Hay **fraude en la construcción** (art. 174 inc. 4).")
+H2("9.5. Inciso 5: fraude en perjuicio de la administración pública")
+LEY("Art. 174 inc. 5", "El que cometiere fraude en perjuicio de alguna administración pública.")
+FICHA([("Sujeto activo", "Cualquier persona (particular o funcionario). Si es funcionario, inhabilitación especial perpetua."),
+       ("Sujeto pasivo", "Una administración pública: Estado nacional, provincial, municipal y sus entes (incluidas las empresas y organismos estatales)."),
+       ("Conducta", "Cometer cualquier fraude: estafa (art. 172) o alguno de los casos del art. 173 (incluida la administración fraudulenta) en perjuicio del patrimonio público."),
+       ("Naturaleza", "Figura agravada por la calidad del sujeto pasivo."),
+       ("Pena", "Prisión de 2 a 6 años.")])
+P("Es la figura más usada del art. 174. Comprende tanto la **estafa al Estado** (obtener subsidios, jubilaciones, pensiones o planes sociales con documentación falsa; facturar prestaciones médicas inexistentes a una obra social estatal) como la **administración fraudulenta de fondos públicos** (art. 173 inc. 7 en función del art. 174 inc. 5). Sobre esto último hay debate: un sector sostiene que, en este último caso, el delito es especial propio (solo puede cometerlo quien administra el patrimonio público), mientras que en la estafa al Estado el autor puede ser cualquiera.")
+JUR("Cámara Federal de Casación Penal (fraude a la administración pública y administración fraudulenta)",
+    "Se discutió si una conducta encuadraba en el art. 174 inc. 5 en función del art. 173 inc. 7, y se caracterizó esa figura como un delito especial propio. Un compendio jurisprudencial dirigido por Patricia Ziffer recoge además la posición según la cual, cuando media una estafa al Estado, la conducta encuadra en el art. 174 inc. 5 como agravante del tipo básico del art. 172.",
+    "MPF-PROCELAC (documentos de la causa «Tandanor», CFCP, Sala IV); Ziffer, Patricia S. (dir.), *Jurisprudencia de Casación Penal*.")
+JUR("Precedente sobre obtención fraudulenta de un beneficio previsional (2024)",
+    "La obtención fraudulenta de un beneficio previsional es una defraudación contra la administración pública (art. 174 inc. 5) que configura un **delito instantáneo de efectos permanentes**. Por eso la prescripción corre desde la obtención del beneficio y no desde el cobro de cada haber. En el caso se declaró la prescripción de la acción.",
+    "Microjuris Al Día Argentina, 01/03/2024.")
+EJ("Ejemplo", "Una persona tramita una pensión no contributiva por invalidez presentando un certificado médico falso y la cobra durante años. Comete **fraude en perjuicio de la administración pública** (art. 174 inc. 5) en concurso con el uso de documento falso (art. 296). Si intervino un médico que expidió el certificado falso, este responde por el art. 295 y como partícipe del fraude.")
+H2("9.6. Inciso 6: afectación maliciosa de establecimientos (vaciamiento)")
+LEY("Art. 174 inc. 6 (incorporado por la Ley 25.602)", "El que maliciosamente afectare el normal desenvolvimiento de un establecimiento o explotación comercial, industrial, agropecuaria, minera o destinado a la prestación de servicios; destruyere, dañare, hiciere desaparecer, ocultare o fraudulentamente disminuyere el valor de materias primas, productos de cualquier naturaleza, máquinas, equipos u otros bienes de capital.")
+P("Se incorporó en 2002, en plena crisis económica, para castigar el **vaciamiento** de empresas: los empresarios que, ante una quiebra inminente o un conflicto, sacaban la maquinaria, ocultaban el stock o paralizaban deliberadamente la planta en perjuicio de trabajadores y acreedores. Exige **malicia**, es decir, una intención dirigida a afectar la explotación.")
+EJ("Ejemplo", "Un fin de semana, el dueño de una metalúrgica en conflicto con su personal retira de noche las máquinas y las traslada a un galpón a nombre de un testaferro, de modo que la planta queda inoperable el lunes. Hay **afectación maliciosa del establecimiento** (art. 174 inc. 6).")
+RES("**Resumen del capítulo.** El art. 174 eleva la pena a **2 a 6 años** en seis supuestos: fraude de seguros por incendio o destrucción de la cosa asegurada (consumación anticipada); abuso de menores o incapaces para hacerles firmar documentos; pesas o medidas falsas; fraude en la construcción con peligro; fraude en perjuicio de la administración pública (el más frecuente), y vaciamiento malicioso de establecimientos. El funcionario o empleado público autor sufre además inhabilitación especial perpetua.")
+
+# =====================================================================
+H1("Capítulo 10. Defraudaciones atenuadas (art. 175) y usura (art. 175 bis)")
+FIG(20, "Defraudaciones atenuadas y usura.")
+H2("10.1. Art. 175: las defraudaciones atenuadas")
+LEY("Art. 175 (encabezado)", "Será reprimido con multa […]:")
+P("El art. 175 agrupa cuatro supuestos en los que el autor no despliega un fraude activo de envergadura, por lo que la ley los castiga **solo con multa**. Los montos fueron fijados por leyes de actualización de multas y hoy están **notoriamente desactualizados**. Las consecuencias prácticas son importantes: la acción **prescribe a los dos años** (art. 62 inc. 5) y el caso admite la **extinción de la acción por el pago voluntario del mínimo de la multa y la reparación de los daños causados**, mientras no se haya iniciado el juicio (art. 64 CP).")
+OJO("Verificar en el texto oficial los montos vigentes de la multa (fijados por la ley de actualización de multas del Código Penal).")
+H3("Inciso 1: apropiación de cosa perdida o de tesoro")
+LEY("Art. 175 inc. 1", "El que encontrare perdida una cosa que no le pertenezca o un tesoro y se apropiare la cosa o el tesoro o la parte del tesoro correspondiente al propietario del suelo, sin observar las prescripciones del Código Civil.")
+P("Quien encuentra una cosa perdida tiene el deber civil de restituirla o entregarla a la autoridad (arts. 1955 y 1956 CCyC). Si se la queda, comete esta figura atenuada. La clave es que la cosa esté realmente **perdida**: si el dueño sabe dónde está o la dejó momentáneamente bajo su esfera de custodia (el celular olvidado sobre la mesa del bar donde está sentado), apoderarse de ella es **hurto** (art. 162), con pena de prisión.")
+JUR("Cámara Federal de Apelaciones de La Plata (apropiación de cosa perdida, art. 175 inc. 1)",
+    "Precedente sobre la apropiación de cosa perdida.",
+    "Pensamiento Penal, fallo n.º 35688.")
+H3("Inciso 2: apropiación de cosa habida por error o caso fortuito")
+LEY("Art. 175 inc. 2", "El que se apropiare una cosa ajena, en cuya tenencia hubiere entrado a consecuencia de un error o de un caso fortuito.")
+P("Es la figura de la **transferencia bancaria equivocada**: alguien recibe en su cuenta un dinero que no le corresponde, por error del ordenante o del banco, y en lugar de devolverlo lo gasta. No hay engaño de su parte (el error fue espontáneo, no provocado), por eso no hay estafa; pero tampoco hay derecho a quedarse con lo ajeno.")
+JUR("Cámara Nacional de Apelaciones en lo Criminal y Correccional (dinero acreditado por error en una cuenta bancaria)",
+    "Se analizó como apropiación de cosa habida por error (art. 175 inc. 2 CP) el caso de quien dispuso de una suma de dinero acreditada por error en su cuenta bancaria.",
+    "Documento del fallo publicado por Diario Constitucional (Chile), «Vea sentencia Cámara Nacional de Apelaciones en lo Criminal y Correccional 56132/2023».")
+OJO("**Diferencia clave con la estafa:** si el error fue **provocado** por quien recibe el dinero (por ejemplo, envió un CVU falso haciéndose pasar por el proveedor), hay estafa (art. 172). Si el error fue espontáneo y el receptor se limitó a aprovecharlo, se aplica el art. 175 inc. 2. Atención también a la modalidad inversa, cada vez más común: «te transferí por error, devolvémelo a esta otra cuenta». Quien devuelve puede estar participando, sin saberlo, en una maniobra de lavado o de estafa triangular.")
+H3("Inciso 3: el prestamista que dispone de la prenda")
+LEY("Art. 175 inc. 3", "El que vendiere la prenda sobre que prestó dinero o se la apropiare o dispusiere de ella, sin las formalidades legales.")
+P("Castiga al acreedor prendario (normalmente, el prestamista o la casa de empeño) que, ante el incumplimiento del deudor, se apropia de la cosa empeñada o la vende **sin cumplir las formalidades legales** de ejecución de la prenda (arts. 2229 y ss. CCyC y legislación especial de prenda con registro).")
+H3("Inciso 4: el acreedor que exige un cheque en garantía")
+LEY("Art. 175 inc. 4", "El acreedor que a sabiendas exija o acepte de su deudor, a título de documento, crédito o garantía por una obligación no vencida, un cheque o giro de fecha posterior o en blanco.")
+P("Protege al **deudor** frente a una práctica abusiva: exigirle un cheque posdatado o en blanco como garantía de una deuda futura, para luego amenazarlo con una denuncia penal por cheque sin fondos. La figura procura que el cheque, instrumento de pago a la vista, no se desnaturalice como instrumento de garantía. Su aplicación práctica es reducida desde la creación del **cheque de pago diferido**, que es legalmente un instrumento de crédito.")
+H2("10.2. Art. 175 bis: usura")
+LEY("Art. 175 bis", "El que, aprovechando la necesidad, la ligereza o la inexperiencia de una persona le hiciere dar o prometer, en cualquier forma, para sí o para otro, intereses u otras ventajas pecuniarias evidentemente desproporcionadas con su prestación, u otorgar recaudos o garantías de carácter extorsivo, será reprimido con prisión de uno a tres años y con multa […]. La misma pena será aplicable al que a sabiendas adquiriere, transfiriere o hiciere valer un crédito usurario. La pena de prisión será de tres a seis años y la multa […], si el autor fuere prestamista o comisionista usurario profesional o habitual.")
+FICHA([("Origen", "Ley 18.934 (1971)."),
+       ("Bien jurídico", "El patrimonio de la víctima frente a la explotación de su situación de inferioridad."),
+       ("Sujeto activo", "Cualquier persona. Agravante: prestamista o comisionista usurario profesional o habitual."),
+       ("Sujeto pasivo", "Persona en estado de necesidad, ligereza o inexperiencia."),
+       ("Conductas", "a) Hacerse dar o prometer intereses o ventajas evidentemente desproporcionadas; b) hacerse otorgar garantías extorsivas; c) adquirir, transferir o hacer valer a sabiendas un crédito usurario."),
+       ("Tipo subjetivo", "Dolo: conocer y aprovechar la situación de la víctima y la desproporción."),
+       ("Pena", "Prisión de 1 a 3 años y multa; agravada: prisión de 3 a 6 años y multa.")])
+P("La usura penal requiere **dos elementos combinados**: un elemento **objetivo**, la desproporción evidente entre lo que el usurero da y lo que recibe, y un elemento **subjetivo-situacional**, el aprovechamiento de la necesidad, la ligereza o la inexperiencia de la víctima. Una tasa alta pactada entre empresarios informados, sin aprovechamiento de una situación de inferioridad, puede ser abusiva civilmente (arts. 771 y 332 CCyC), pero no es usura penal.")
+P("Los proyectos de reforma presentados en el Congreso (2022, 2025 y 2026) proponen, según el caso, eliminar el requisito del aprovechamiento o definir la desproporción con criterios objetivos (por ejemplo, el costo financiero total). A octubre de 2026 no se registra su sanción.")
+JUR("Cámara Federal de Apelaciones de La Plata (usura agravada)",
+    "Confirmó un procesamiento por usura agravada (prestamista habitual) y analizó los requisitos típicos de la figura: la desproporción evidente de los intereses y el aprovechamiento de la situación de necesidad de las víctimas.",
+    "Pensamiento Penal, fallo n.º 90101, «CFALaPlata confirma procesamiento por usura agravada y analiza requisitos típicos de la figura».")
+EJ("Ejemplo: el prestamista del barrio",
+   "Un prestamista ofrece «créditos sin requisitos» a trabajadores informales y jubilados: presta $100.000 y cobra $20.000 por semana durante diez semanas (tasa anual de varios miles por ciento), retiene la tarjeta de débito de la víctima con su clave como «garantía» y amenaza con presentarse en el trabajo del deudor. Hay **usura** con **garantía extorsiva** y, por su habitualidad, la figura **agravada** (3 a 6 años). Si se acreditan amenazas para cobrar, concurre con la extorsión o las amenazas.")
+RES("**Resumen del capítulo.** El art. 175 castiga con **multa** cuatro defraudaciones menores: quedarse con una cosa perdida o un tesoro, apropiarse de lo recibido por error o caso fortuito (la transferencia equivocada), disponer de la prenda sin las formalidades legales y exigir cheques posdatados o en blanco en garantía. Prescriben a los 2 años. La **usura** (art. 175 bis) exige desproporción evidente **más** aprovechamiento de la necesidad, ligereza o inexperiencia, con prisión de 1 a 3 años, que sube a 3 a 6 si el usurero es profesional o habitual.")
+
+# =====================================================================
+H1("Capítulo 11. Quebrados, insolvencia fraudulenta y cheques")
+H2("11.1. Quebrados y otros deudores punibles (arts. 176 a 180)")
+FIG(21, "Quebrados y otros deudores punibles.")
+P("El Capítulo V del Título VI protege el patrimonio de los **acreedores** como conjunto, frente a la conducta del deudor que, en una situación de insolvencia, los perjudica fraudulentamente. Tiene especial interés para el abogado civil y comercial, y la figura de la **insolvencia fraudulenta** es central también en el derecho de familia.")
+TAB(["Artículo", "Figura", "Elementos", "Pena"],
+    [["176", "Quiebra fraudulenta", "Comerciante declarado en quiebra que, en fraude de sus acreedores, simula o supone deudas, enajenaciones, gastos o pérdidas; no justifica la salida o existencia de bienes; sustrae u oculta bienes de la masa; o concede ventajas indebidas a un acreedor", "Prisión de 2 a 6 años e inhabilitación especial de 3 a 10 años"],
+     ["177", "Quiebra culpable", "Comerciante que causa su propia quiebra y perjudica a sus acreedores por gastos excesivos, especulaciones ruinosas, juego, abandono de sus negocios o cualquier otro acto de negligencia o imprudencia manifiesta", "Prisión de 1 mes a 1 año e inhabilitación especial de 2 a 5 años"],
+     ["178", "Responsabilidad de directivos", "En la quiebra de una sociedad o persona jurídica, o en un concurso civil: directores, síndicos, administradores, miembros de la comisión fiscalizadora, gerentes, contadores o tenedores de libros que cooperaron en los actos", "La del quebrado fraudulento o culpable"],
+     ["179, 1.º párr.", "Concurso civil fraudulento", "Deudor no comerciante concursado civilmente que comete alguno de los actos del art. 176 para defraudar a sus acreedores", "Prisión de 6 meses a 3 años"],
+     ["179, 2.º párr.", "Insolvencia fraudulenta", "Ver punto 11.2", "Prisión de 6 meses a 3 años"],
+     ["180", "Connivencia", "Acreedor que consiente un concordato, convenio o transacción judicial a cambio de ventajas especiales pactadas con el deudor o un tercero; y el deudor o directivo que celebró ese concierto", "Prisión de 1 mes a 1 año"]],
+    [2, 3, 8, 4])
+P("Las figuras de quiebra exigen la **declaración judicial de quiebra** como presupuesto (una condición objetiva de punibilidad, según la posición mayoritaria). El juez comercial debe comunicar al juez penal los hechos que puedan configurar delito, y el informe general del síndico (art. 39 de la Ley de Concursos y Quiebras 24.522) es una pieza probatoria fundamental.")
+H2("11.2. La insolvencia fraudulenta (art. 179, segundo párrafo)")
+LEY("Art. 179, segundo párrafo", "Será reprimido con prisión de seis meses a tres años, el que durante el curso de un proceso o después de una sentencia condenatoria, maliciosamente destruyere, inutilizare, dañare, ocultare o hiciere desaparecer bienes de su patrimonio o fraudulentamente disminuyere su valor, y de esta manera frustrare, en todo o en parte, el cumplimiento de las correspondientes obligaciones civiles.")
+FICHA([("Sujeto activo", "El deudor demandado o condenado (para un sector, solo él; la jurisprudencia admitió la coautoría o participación de terceros, como el familiar que figura como adquirente o el profesional que asesoró la maniobra)."),
+       ("Presupuesto", "Que exista un **proceso** en curso o una **sentencia condenatoria** sobre la obligación civil."),
+       ("Conductas", "Destruir, inutilizar, dañar, ocultar o hacer desaparecer bienes propios, o disminuir fraudulentamente su valor."),
+       ("Resultado", "Frustrar, en todo o en parte, el cumplimiento de la obligación civil."),
+       ("Tipo subjetivo", "Dolo + malicia: la intención de frustrar el cobro del acreedor."),
+       ("Consumación", "Con la frustración efectiva del cumplimiento."),
+       ("Pena", "Prisión de 6 meses a 3 años.")])
+P("Es la figura que permite reaccionar penalmente contra el **deudor que se insolventa** durante el juicio para que la sentencia sea de cumplimiento imposible: vende sus bienes a familiares, transfiere los fondos a cuentas de terceros, «pierde» el auto o constituye sociedades a nombre de otros.")
+JUR("Cámara Nacional de Apelaciones en lo Criminal y Correccional (1994), sobre la consumación",
+    "El delito de insolvencia fraudulenta se consuma cuando efectivamente se frustra la obligación, es decir, cuando la imputada, condenada en sede civil, no puede cumplir.",
+    "vLex Argentina, voz «Insolvencia fraudulenta. Consumación» (sumario editorial).")
+JUR("CNCrim. y Correc., Sala 6 (insolvencia fraudulenta y coautoría)",
+    "Fallo comentado por el INECIP sobre el procesamiento de coautores por insolvencia fraudulenta, en el que se discute si solo puede ser autor el deudor condenado.",
+    "INECIP, «Comentario fallo sobre insolvencia fraudulenta».")
+JUR("Precedente de la justicia de Córdoba sobre insolvencia procesal fraudulenta y responsabilidad del abogado",
+    "Se analizó la responsabilidad, como partícipe, del abogado patrocinante en la maniobra de insolvencia procesal fraudulenta de su cliente.",
+    "Comercio y Justicia, Semanario Jurídico, «Insolvencia procesal fraudulenta».")
+H3("Aplicación en el derecho de familia")
+P("Para el deudor **alimentario**, el legislador previó una figura específica: el **art. 2 bis de la Ley 13.944** (incorporado por la Ley 24.029), que castiga con prisión de uno a seis años a quien, para eludir sus obligaciones alimentarias, destruye, oculta o hace desaparecer bienes de su patrimonio o disminuye fraudulentamente su valor, y frustra así su cumplimiento. Según la doctrina (Terragni), ese régimen especial alcanza solo a los sujetos comprendidos en la Ley 13.944, y los demás deudores alimentarios que se insolventan fraudulentamente quedan comprendidos en el art. 179, segundo párrafo.")
+P("Respecto del requisito del **proceso**, se sostiene que la demanda de alimentos constituye un proceso a los fines del art. 179, segundo párrafo, y que el vaciamiento posterior de cuentas bancarias puede encuadrar en la figura cuando se demuestra que estuvo orientado a frustrar el cobro. Otro sector exige que exista una sentencia interlocutoria o definitiva, lo que marca una diferencia con la figura de la Ley 13.944.")
+OJO("Verificar en el texto oficial la redacción y la escala penal del art. 2 bis de la Ley 13.944 antes de citarlo en un escrito.")
+EJ("Ejemplo para abogados de familia",
+   "Iniciado el juicio de alimentos y fijada una cuota provisoria, el progenitor transfiere su camioneta a un amigo por un precio vil, cierra su cuenta sueldo, pasa a cobrar «en negro» a través de una sociedad a nombre de su hermana y deja de pagar. La madre no puede embargar nada. Además del incumplimiento de los deberes de asistencia familiar (Ley 13.944), la maniobra puede encuadrar en la **insolvencia alimentaria fraudulenta** (art. 2 bis de esa ley) o, según el caso, en la **insolvencia fraudulenta** del art. 179, segundo párrafo. El amigo y la hermana pueden ser partícipes.")
+TIP("Antes de denunciar, documente: la **fecha de inicio del proceso** (o de la sentencia), los **bienes** que el deudor tenía antes (informes de dominio, extractos, declaraciones juradas), los **actos de disposición** posteriores y la **frustración** del cobro (embargos negativos, informes del oficial de justicia). La correlación temporal entre la demanda y el vaciamiento es la mejor prueba de la malicia.")
+H2("11.3. Cheques: estafa (art. 172) o libramiento sin fondos (art. 302)")
+FIG(22, "Cheque: estafa o art. 302.")
+LEY("Art. 302 (Ley 24.452), núcleo", "Será reprimido con prisión de seis meses a cuatro años e inhabilitación especial de uno a cinco años, siempre que no concurran las condiciones del artículo 172: 1) El que dé en pago o entregue por cualquier concepto a un tercero un cheque sin tener provisión de fondos o autorización expresa para girar en descubierto, y no lo abonare en moneda nacional dentro de las veinticuatro horas de habérsele comunicado la falta de pago mediante aviso bancario, comunicación del tenedor o cualquier otra forma documentada de interpelación; 2) El que dé en pago o entregue, por cualquier concepto a un tercero un cheque, a sabiendas de que al tiempo de su presentación no podrá legalmente ser pagado; 3) El que librare un cheque y diera contraorden para el pago, fuera de los supuestos autorizados por la ley, o frustrare maliciosamente su pago; 4) El que librare un cheque en formulario ajeno sin autorización.")
+P("El art. 302 está ubicado entre los delitos contra la **fe pública** y es expresamente **subsidiario** de la estafa: rige «siempre que no concurran las condiciones del artículo 172». La regla para distinguirlos es la siguiente:")
+BUL(["Si el cheque es **el ardid** que provoca la entrega (el autor compra mercadería y paga **en el acto** con un cheque que sabe que no tiene fondos, aparentando solvencia), hay **estafa** (art. 172). El cheque es un medio de «aparentar bienes o crédito».",
+     "Si el cheque se entrega **en pago de una deuda preexistente** o sin que sea la causa de la contraprestación, no hay estafa (el acreedor no dispuso nada por el cheque) y el caso puede encuadrar en el **art. 302** si se dan sus requisitos (por ejemplo, falta de pago dentro de las 24 horas desde la interpelación)."])
+P("La doctrina reiterada indica que la punibilidad del art. 302 está condicionada a que no concurra estafa, y que hay estafa cuando la entrega del cheque es el ardid (apariencia de bienes) usado para obtener la contraprestación. Un fallo de 2025 aplicó ese criterio a un caso en el que los cheques no se usaron por su valor como medio de pago, sino como parte del ardid de la estafa, junto con una usurpación de identidad.")
+P("**Cheque de pago diferido.** Según una opinión del Procurador General a la que adhirió la Corte Suprema, citada en el proyecto de ley 4593-D-2013, el cheque de pago diferido es un instrumento de **crédito** y no de pago. Su entrega a cambio de una contraprestación no implica simultaneidad, de modo que en principio no puede fundar una estafa basada en la apariencia de pago inmediato.")
+OJO("La jurisprudencia sobre la **interpelación** del art. 302 inc. 1 (forma, destinatario, cómputo de las 24 horas) presenta criterios dispares (Diario Judicial, «La interpelación por libramiento de cheques sin fondos: criterios dispares»). Verificar el criterio del tribunal interviniente.")
+EJ("Dos casos con cheques",
+   "**a)** Un comprador retira 200 bolsas de cemento de un corralón y entrega en el acto un cheque común a la vista de una cuenta que sabe cerrada. El corralón entregó la mercadería **por** el cheque: **estafa** (art. 172).\n**b)** Un deudor que debía tres meses de alquiler entrega un cheque al locador para saldar la deuda; el cheque es rechazado por falta de fondos y, interpelado por carta documento, no lo paga en 24 horas. No hay estafa (la deuda era anterior y el locador no dispuso nada por el cheque), pero puede haber **libramiento de cheque sin fondos** (art. 302 inc. 1).")
+RES("**Resumen del capítulo.** Los arts. 176 a 180 castigan al deudor que perjudica a sus acreedores en la quiebra o el concurso. La **insolvencia fraudulenta** (art. 179, 2.º párrafo) sanciona a quien, durante un proceso o después de la condena, oculta o hace desaparecer bienes y frustra el cobro; tiene una versión alimentaria específica en la Ley 13.944. En materia de cheques, si el cheque es el ardid de una entrega simultánea hay **estafa**; si se da en pago de una deuda previa y no se abona tras la interpelación, se aplica el **art. 302**, que es subsidiario.")
