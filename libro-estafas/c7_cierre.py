@@ -88,20 +88,32 @@ for q, a in faq:
     P(a)
 
 H1("Anexo IV. Tabla de control de fuentes")
-P("Los siguientes datos se tomaron de fuentes secundarias confiables, pero conviene cotejarlos con la fuente oficial antes de citarlos en un escrito judicial.")
-TAB(["Dato", "Dónde verificar", "Observación"],
-    [["Texto de los arts. 172 a 180, 185 y 302 CP", "InfoLEG (Ley 11.179, texto actualizado)", "Reconstruido a partir de reproducciones concordantes"],
-     ["Montos de las multas de los arts. 175 y 175 bis", "InfoLEG", "Fijados por leyes de actualización; desactualizados"],
-     ["Ubicación del párrafo final del art. 174", "InfoLEG", "Alcance de «los tres incisos precedentes» tras la Ley 25.602"],
-     ["Leyes que dieron su redacción actual a los incs. 7 y 11 del art. 173", "InfoLEG (notas del artículo)", "Historia legislativa compleja (1968, 1976, Ley 23.077)"],
-     ["Art. 2 bis Ley 13.944 (texto y pena)", "InfoLEG", "Incorporado por la Ley 24.029"],
-     ["Vigencia del régimen de ejecución extrajudicial de la Ley 24.441", "InfoLEG y CCyC", "Relevante para el art. 173 inc. 13"],
-     ["CSJN «Selman» (22/05/2020): doctrina exacta", "csjn.gov.ar (CSJ 690/2017/RH1)", "Se cita a través de su comentario doctrinal"],
-     ["CSJN «Pompas» (03/12/2002): cita en Fallos", "csjn.gov.ar / MPF-PROCELAC", "Se cita por número de expediente y fecha"],
-     ["TSJ Córdoba: fallos de 2012 (retención indebida), 2013 (desbaratamiento) y «Bonardi»", "Buscador de jurisprudencia del Poder Judicial de Córdoba", "Completar número de sentencia y carátula"],
-     ["Numeración de los artículos del CPP de Córdoba sobre el querellante, el actor civil y el juicio abreviado", "Ley 8123, texto ordenado vigente", "El art. 13 bis (Ley 10.457) está verificado"],
-     ["Estado del proyecto de nuevo Código Penal", "Congreso de la Nación / Boletín Oficial", "A octubre de 2026, sin ingreso formal"]],
-    [6, 5, 5])
+P("Esta tabla registra el resultado del **cotejo con fuentes oficiales** realizado el 24/10/2026 a través de la base InfoLEG (leyes originales publicadas) y de la base de datos abiertos de la CSJN. Los puntos marcados como **pendientes** no pudieron confirmarse en fuente oficial y deben verificarse antes de citarlos en un escrito.")
+TAB(["Dato", "Resultado del cotejo", "Fuente consultada"],
+    [["Art. 172 (texto)", "**Verificado.** Coincide con el texto del libro", "InfoLEG, Ley 11.179"],
+     ["Art. 173 incs. 1 a 6, 8, 9 y 10 (texto)", "**Verificado.** Coinciden con el texto del libro", "InfoLEG, Ley 11.179"],
+     ["Art. 173 incs. 12, 13 y 14", "**Verificado.** Incorporados por el art. 82 de la Ley 24.441 (1994)", "InfoLEG, Ley 24.441"],
+     ["Art. 173 inc. 15", "**Verificado.** Texto y origen (Ley 25.930, sancionada el 25/08/2004)", "InfoLEG, Ley 25.930"],
+     ["Art. 173 inc. 16", "**Verificado.** Texto y origen (art. 9, Ley 26.388)", "InfoLEG, Ley 26.388"],
+     ["Art. 173 incs. 7 y 11 (redacción actual)", "**Pendiente.** El texto del libro coincide con las reproducciones doctrinarias; no se pudo consultar la ley que les dio su redacción vigente", "—"],
+     ["Art. 174 incs. 1 a 5", "**Verificado**", "InfoLEG, Ley 11.179"],
+     ["Art. 174 inc. 6 y párrafo final", "**Verificado y corregido.** La Ley 25.602 agregó el inc. 6 y redactó «tres incisos precedentes» (incs. 4, 5 y 6); el art. 174 bis fue vetado", "InfoLEG, Ley 25.602 y Decreto 1059/2002"],
+     ["Art. 175 (texto) y multas de los arts. 175 y 175 bis", "**Verificado y corregido.** Multas fijadas por la Ley 24.286", "InfoLEG, Leyes 11.179, 23.479 y 24.286"],
+     ["Art. 175 bis (texto)", "**Pendiente** (coincide con reproducciones doctrinarias)", "—"],
+     ["Arts. 176, 177, 178 y 180", "**Verificado**", "InfoLEG, Ley 11.179"],
+     ["Art. 179, primer párrafo (pena)", "**Corregido:** prisión de 1 a 4 años", "InfoLEG, Ley 11.179"],
+     ["Art. 179, segundo párrafo (insolvencia fraudulenta)", "**Pendiente** (coincide con reproducciones doctrinarias)", "—"],
+     ["Art. 185", "**Verificado**", "InfoLEG, Ley 11.179"],
+     ["Art. 302 y cheque de pago diferido", "**Corregido:** la Ley 24.452 (art. 6) solo extiende los incs. 2, 3 y 4 del art. 302 al cheque de pago diferido", "InfoLEG, Ley 24.452"],
+     ["Art. 2 bis Ley 13.944", "**Verificado:** incorporado por la Ley 24.029; prisión de 1 a 6 años", "argentina.gob.ar, Ley 24.029"],
+     ["CSJN «Acosta» (Fallos 331:858, 23/04/2008)", "**Verificado** (fecha, cita y doctrina sobre el art. 76 bis)", "Reproducciones del fallo (MPD, Pensamiento Penal)"],
+     ["CSJN «Selman» (22/05/2020)", "**Pendiente.** No figura en la base de datos abiertos de la CSJN consultada; se cita a través de su comentario doctrinal", "—"],
+     ["CSJN «Pompas» (03/12/2002)", "**Pendiente.** No figura en la base de datos abiertos consultada; se cita por expediente y fecha según MPF-PROCELAC", "—"],
+     ["CSJN «Bourdieu» (Fallos 145:307, 1925)", "**Pendiente** de cotejo en la colección de Fallos", "—"],
+     ["TSJ Córdoba: fallos de 2012, 2013 y «Bonardi»", "**Pendiente.** Completar número de sentencia y carátula", "—"],
+     ["CPP de Córdoba: querellante, actor civil y juicio abreviado", "Querellante particular: art. 7 (texto de la Ley 8123 publicado por INECIP). Actor civil y juicio abreviado: **pendiente**", "INECIP"],
+     ["Estado del proyecto de nuevo Código Penal", "Sin ingreso formal al Congreso a octubre de 2026", "Prensa de octubre de 2026"]],
+    [5, 7, 4])
 
 H1("Anexo V. Glosario")
 glos = [

@@ -294,7 +294,7 @@ add(s_table, "Art. 174 CP", "Defraudaciones agravadas: prisión de 2 a 6 años",
      ["4", "Fraude en la construcción", "Pone en peligro personas, bienes o al Estado"],
      ["5", "Fraude a la administración pública", "Perjuicio a un patrimonio estatal"],
      ["6", "Vaciamiento de empresas", "Afectar maliciosamente la explotación (Ley 25.602)"]],
-    note="Funcionario o empleado público autor: **inhabilitación especial perpetua** (último párrafo).")
+    note="Funcionario o empleado público autor (incs. 4, 5 y 6): **inhabilitación especial perpetua** (último párrafo, Ley 25.602).")
 
 add(s_cols, "Arts. 175 y 175 bis", "Defraudaciones atenuadas y usura",
     [("Art. 175 · multa", ["**Inc. 1:** apropiarse de una cosa perdida o de un tesoro", "**Inc. 2:** apropiarse de lo recibido por error o caso fortuito (transferencia equivocada)", "**Inc. 3:** prestamista que vende o se apropia de la prenda", "**Inc. 4:** acreedor que exige un cheque posdatado o en blanco en garantía"]),
@@ -305,7 +305,7 @@ add(s_table, "Capítulo V", "Quebrados y otros deudores punibles",
     [["176", "Quiebra fraudulenta (comerciante fallido)", "Prisión 2 a 6 años + inhab. 3 a 10"],
      ["177", "Quiebra culpable (negligencia o imprudencia)", "Prisión 1 mes a 1 año + inhab. 2 a 5"],
      ["178", "Directivos, síndicos, contadores que cooperan", "Pena del 176 o 177"],
-     ["179, 1er párr.", "Concurso civil fraudulento", "Prisión 6 meses a 3 años"],
+     ["179, 1er párr.", "Concurso civil fraudulento", "Prisión 1 a 4 años"],
      ["179, 2.º párr.", "**Insolvencia fraudulenta** (frustrar una condena)", "Prisión 6 meses a 3 años"],
      ["180", "Connivencia en concordato o transacción", "Prisión 1 mes a 1 año"]],
     note="Clave para el abogado civilista y de familia: vaciar el patrimonio **durante el juicio o después de la sentencia** puede encuadrar en el art. 179, 2.º párrafo.")
