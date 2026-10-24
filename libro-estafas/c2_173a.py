@@ -119,9 +119,12 @@ TAB(["Título", "¿Típico?", "Por qué"],
     [6, 3, 7])
 H3("b) La intimación")
 P("La ley no menciona la intimación, pero la jurisprudencia la considera **necesaria** en la mayoría de los casos, porque es lo que permite saber si el autor se **niega** a restituir o si la restitución está **vencida** y el autor lo sabe. La intimación **fehaciente** (carta documento, telegrama, acta notarial, requerimiento judicial) es además la mejor prueba del **dolo**.")
-JUR("Tribunal Superior de Justicia de Córdoba, Sala Penal, 04/10/2012 (retención indebida y administración fraudulenta)",
+JUR("Tribunal Superior de Justicia de Córdoba, Sala Penal, «Lange», Sentencia n.º 195, 01/08/2012 (retención indebida y administración fraudulenta)",
     "La retención indebida supone una tenencia legítimamente adquirida que el tenedor no restituye; es un delito doloso, que exige conocer la obligación de devolver. La intimación es necesaria para tipificar la figura cuando la cosa no se restituye en término. En la administración fraudulenta, en cambio, se exige un fin específico: procurar un lucro indebido o causar daño.",
-    "Pensamiento Penal, fallo n.º 34732 (reseñado también en elDial.com).")
+    "Pensamiento Penal, fallo n.º 34732; número y fecha confirmados por su cita en TSJ Córdoba, «Bustos», S. n.º 463, 09/11/2018.")
+JUR("Tribunal Superior de Justicia de Córdoba, Sala Penal, «Bustos, Ricardo Alberto», Sentencia n.º 463, 09/11/2018 (SAC 1399480; vocales López Peña, Tarditti y Cáceres de Bollati)",
+    "Al resolver los recursos de casación contra la sentencia absolutoria de la Cámara en lo Criminal y Correccional de Cruz del Eje (S. n.º 40, 06/07/2017), la Sala reiteró que la retención indebida requiere la entrega de una cosa mueble con la obligación de devolver esa misma cosa a su debido tiempo, y que el autor tiene sobre ella un poder de hecho legítimamente adquirido en virtud del negocio jurídico acordado (con cita de «Lange»).",
+    "Portal de jurisprudencia del Poder Judicial de Córdoba (jurisprudencia.justiciacordoba.gob.ar). Leer la parte dispositiva en el texto completo antes de citar el resultado del recurso.")
 JUR("CNCrim. y Correc., Sala IV, causa 1055/11 (2011)",
     "Se descartó el dolo del art. 173 inc. 2 porque no existió una intimación fehaciente que acreditara que el imputado conocía su deber de restituir: los requerimientos habían sido solo verbales.",
     "derechopenalonline.com, «Retención indebida. Atipicidad. Intimación fehaciente».")

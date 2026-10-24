@@ -117,7 +117,7 @@ JUR("Tribunal Superior de Justicia de Córdoba, Sala Penal, 06/06/2013",
     "Precedente sobre desbaratamiento de derechos acordados (art. 173 inc. 11 CP) en un caso de compraventa inmobiliaria, remate del inmueble y ejecución hipotecaria.",
     "Citado en doctrina sobre compraventa inmobiliaria y ejecución hipotecaria (nota publicada en *El Derecho*, t. 282, 2018). Consultar el texto completo en el buscador de jurisprudencia del Poder Judicial de Córdoba.")
 JUR("Cámara en lo Criminal y Correccional de 10.ª Nominación de Córdoba, «Novello, Claudio Ricardo», SAC 9169518",
-    "Condenó a un contador público a tres años de prisión de cumplimiento efectivo por el delito de desbaratamiento de derechos acordados, en relación con un inmueble adquirido «en pozo».",
+    "Condenó a un contador público a tres años de prisión de cumplimiento efectivo por el delito de desbaratamiento de derechos acordados, en relación con un inmueble adquirido «en pozo». Sostuvo que el tipo no exige que el precio esté pagado y que el perjuicio no se limita a la disminución del activo (pago del precio), sino que puede consistir en el aumento del pasivo.",
     "Poder Judicial de Córdoba, sección Novedades («Condena efectiva a un contador público por el delito…») y documento adjunto del expediente.")
 P("En cuanto a la **consumación**, la jurisprudencia sostiene que el delito se consuma con el acto o hecho ulterior, jurídico o material, del autor que frustra el derecho o el cumplimiento de la obligación. Un antiguo criterio, recogido en la *Revista del Notariado*, sostuvo que las obligaciones de hacer no son susceptibles de desbaratamiento. Es una posición discutible, que conviene verificar antes de invocarla.")
 EJ("Ejemplo: el lote vendido dos veces",
@@ -164,9 +164,9 @@ FICHA([("Origen", "Ley 25.930 (B.O. 21/09/2004)."),
        ("Pena", "Prisión de 1 mes a 6 años.")])
 P("El inciso resolvió un problema serio. Antes de 2004, el uso de una tarjeta robada en un cajero automático no podía calificarse como estafa, porque **la máquina no se equivoca** (no hay error en una persona), y tampoco como hurto con facilidad, porque el dinero sale por una operación autorizada por el sistema. La fórmula «aunque lo hiciere por medio de una operación automática» cerró esa laguna.")
 P("**Relación con el apoderamiento de la tarjeta.** Si el autor primero roba la cartera con la tarjeta y luego la usa, hay dos hechos: el **robo** (art. 164) y la **defraudación con tarjeta** (art. 173 inc. 15), en concurso real. La mera tenencia de una tarjeta de origen ilegítimo no configura el inciso 15, que exige el **uso** defraudatorio.")
-JUR("Tribunal Superior de Justicia de Córdoba, Sala Penal, «Bonardi»",
+JUR("Tribunal Superior de Justicia de Córdoba, Sala Penal, «Bonardi, Oscar Enrique», Sentencia n.º 111, 18/05/2012 (expte. «B», 68/11)",
     "El art. 173 inc. 15 prevé dos grandes supuestos: el uso de una **tarjeta física** (falsificada, adulterada, hurtada, robada, perdida u obtenida mediante ardid del emisor) y el **uso no autorizado de los datos** de la tarjeta, en el que no se requiere el empleo del plástico sino solo de sus datos. En el caso, las extracciones se hicieron en distintos cajeros automáticos con tarjetas apócrifas y claves.",
-    "Pensamiento Penal, fallo n.º 34419 (TSJ de Córdoba).")
+    "Pensamiento Penal, fallo n.º 34419. La Cámara Novena del Crimen había condenado al imputado como coautor de defraudación por uso no autorizado de datos de tarjetas de débito (38 hechos), descartando el primer supuesto porque no se hallaron las tarjetas empleadas. Leer la parte dispositiva en el texto completo antes de citar el resultado del recurso.")
 JUR("Cámara en lo Criminal de 10.ª Nominación de Córdoba (banda de tarjetas falsas)",
     "Condenó a 21 integrantes de una organización que defraudó a una emisora de tarjetas regional con plásticos confeccionados con datos falsos o de personas que no los habían autorizado, que distribuían, y que montaba sociedades fantasma para generar comprobantes y pagos.",
     "Perfil Córdoba, «Condenaron a la banda que defraudó con plásticos truchos de Naranja X».")

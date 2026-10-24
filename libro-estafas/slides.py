@@ -248,7 +248,7 @@ add(s_flow, "Art. 173 inc. 2", "Retención indebida paso a paso",
      ("Obligación de devolver", "El título obliga a **entregar o restituir**"),
      ("Intimación", "Requerimiento **fehaciente** (carta documento)"),
      ("Negativa u omisión", "No restituye **a su debido tiempo** con perjuicio")],
-    note="TSJ Córdoba, Sala Penal (04/10/2012): la intimación es necesaria cuando no se restituye en término. Sin intimación fehaciente puede faltar el **dolo** (CNCrim y Correc., Sala IV, 2011).")
+    note="TSJ Córdoba, Sala Penal, «Lange» (S. 195, 01/08/2012): la intimación es necesaria cuando no se restituye en término. Sin intimación fehaciente puede faltar el **dolo** (CNCrim y Correc., Sala IV, 2011).")
 
 add(s_cols, "Art. 173 inc. 7", "Administración fraudulenta",
     [("Sujeto activo (delito especial)", ["Quien maneja, administra o cuida bienes ajenos", "Por **ley, autoridad o acto jurídico**", "Ej.: gerente, apoderado, administrador de consorcio, tutor"]),
@@ -270,7 +270,7 @@ add(s_table, "Art. 173 inc. 15", "Defraudación con tarjetas",
      ["Obtenida con ardid del emisor", "Se tramita con identidad o datos falsos"],
      ["Uso no autorizado de los **datos**", "No hace falta el plástico: compras online"],
      ["**Operación automática**", "Alcanza el cajero automático y el posnet"]],
-    note="TSJ Córdoba, «Bonardi»: distingue el uso de la **tarjeta física** del uso no autorizado de sus **datos**. Origen: Ley 25.930 (B.O. 21/09/2004).")
+    note="TSJ Córdoba, «Bonardi» (S. 111, 18/05/2012): distingue el uso de la **tarjeta física** del uso no autorizado de sus **datos**. Origen: Ley 25.930 (B.O. 21/09/2004).")
 
 add(s_cols, "Art. 173 inc. 16 vs. art. 172", "Fraude informático y ciberestafa",
     [("Estafa común (art. 172) por medios digitales", ["Se engaña a una **persona**", "La víctima transfiere **ella misma**", "Ej.: falso vendedor en Marketplace", "Ej.: WhatsApp robado que pide dinero"]),
