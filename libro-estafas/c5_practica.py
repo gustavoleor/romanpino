@@ -45,7 +45,7 @@ H2("12.5. Salidas alternativas")
 TAB(["Instituto", "Fuente", "Aplicación a las defraudaciones"],
     [["Criterios de oportunidad y conciliación", "Art. 59 inc. 6 CP; art. 13 bis CPP Córdoba (Ley 10.457, 2017)", "Si la conciliación produce un acuerdo resarcitorio, el fiscal solo puede prescindir de la acción cuando la víctima haya recibido la totalidad de lo acordado (inc. 5 del art. 13 bis, según la doctrina citada)"],
      ["Suspensión del juicio a prueba", "Art. 76 bis CP", "Procede en estafas cuando la pena posible admite condena condicional (CSJN, «Acosta»); exige ofrecer reparación razonable"],
-     ["Juicio abreviado", "CPP Córdoba", "Acuerdo sobre los hechos y la calificación; la pena no puede superar la pedida por el fiscal. Muy usado en las estafas reiteradas"],
+     ["Juicio abreviado", "Art. 415 CPP Córdoba (y art. 356, juicio abreviado inicial durante la investigación)", "Acuerdo sobre los hechos y la calificación; la pena no puede superar la pedida por el fiscal. Muy usado en las estafas reiteradas"],
      ["Extinción por pago de la multa", "Art. 64 CP", "Solo en las figuras del art. 175, que se castigan con multa"]],
     [4, 5, 7])
 P("Según un trabajo publicado en la Revista de la Facultad de Derecho de la Universidad Católica de Córdoba, el art. 13 bis del CPP fue incorporado por la Ley provincial 10.457 de 2017 y regula la extinción de la acción por conciliación. Es la única disposición local vinculada directamente con el art. 59 inc. 6 CP. Una guía de la Fiscalía General (Resolución General 20/19) señala que los criterios de oportunidad son de resorte exclusivo del Ministerio Público Fiscal.")
