@@ -35,14 +35,16 @@ npm run demo      # crea ./ejemplo-expediente (juicio laboral ficticio con contr
 npm start
 ```
 
-En **Ajustes**: cargá tu clave de API de Anthropic (se guarda cifrada con el almacén del sistema operativo; también se acepta `ANTHROPIC_API_KEY`), aceptá el aviso de confidencialidad y cargá feriados/ferias.
+**Gratis y privado (recomendado): IA local con [Ollama](https://ollama.com).** Instalá Ollama, descargá un modelo (`ollama pull qwen2.5:7b`) y dejalo abierto. La app lo usa por defecto: no cuesta nada y ningún documento sale de tu computadora. Los modelos locales son menos precisos que los de la nube, y en equipos con poca memoria conviene achicar el «texto por consulta» en Ajustes; la verificación automática de citas ayuda a detectar errores.
+
+**Opcional (de pago): Claude en la nube.** En **Ajustes** elegí «Nube con Claude»: cargá tu clave de API de Anthropic (se guarda cifrada con el almacén del sistema operativo; también se acepta `ANTHROPIC_API_KEY`), aceptá el aviso de confidencialidad y cargá feriados/ferias.
 
 Tests: `npm test`. Instalador: `npm run dist`.
 
 ## Datos y confidencialidad
 
 - Los documentos **no se copian ni se suben a ningún servidor propio**. El índice y los resultados se guardan en `<carpeta del caso>/.asistente/`.
-- Al ejecutar una tarea, el texto de los documentos tildados se envía a la API de Anthropic. Revisá los términos de tratamiento de datos de tu cuenta y tus deberes de reserva profesional; considerá anonimizar partes antes de usarla con casos reales.
+- Con Ollama (por defecto) nada sale de tu equipo. Con la opción de nube, al ejecutar una tarea el texto de los documentos tildados se envía a la API de Anthropic. Revisá los términos de tratamiento de datos de tu cuenta y tus deberes de reserva profesional; considerá anonimizar partes antes de usarla con casos reales.
 - La búsqueda local no envía nada a la nube.
 
 ## Límites actuales

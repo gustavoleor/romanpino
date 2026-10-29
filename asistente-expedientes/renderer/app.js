@@ -422,6 +422,11 @@ document.addEventListener('keydown', (e) => e.key === 'Escape' && show($('viewer
 // ---------- ajustes ----------
 async function fillSettings() {
   const s = (state.settings = await api.getSettings());
+  $('st-provider').value = s.provider;
+  $('st-omodel').value = s.ollamaModel;
+  $('st-ourl').value = s.ollamaUrl;
+  $('st-obudget').value = s.localBudgetChars;
+  syncProvider();
   $('st-privacy').checked = !!s.privacyAccepted;
   $('st-model').value = s.model;
   $('st-budget').value = s.budgetChars;
@@ -430,6 +435,12 @@ async function fillSettings() {
   $('st-feriados').value = (s.feriados || []).join('\n');
   $('st-ferias').value = (s.ferias || []).map((f) => `${f.desde} ${f.hasta}`).join('\n');
 }
+function syncProvider() {
+  const local = $('st-provider').value === 'ollama';
+  show($('box-ollama'), local);
+  show($('box-cloud'), !local);
+}
+$('st-provider').onchange = syncProvider;
 $('st-save').onclick = async () => {
   try {
     const lines = (id) => $(id).value.split('\n').map((l) => l.trim()).filter(Boolean);
@@ -441,7 +452,7 @@ $('st-save').onclick = async () => {
       if (!date.test(desde || '') || !date.test(hasta || '')) throw new Error(`Feria inválida: «${l}». Usá AAAA-MM-DD AAAA-MM-DD.`);
       return { desde, hasta };
     });
-    const patch = { privacyAccepted: $('st-privacy').checked, model: $('st-model').value.trim(), budgetChars: Number($('st-budget').value), feriados, ferias };
+    const patch = { provider: $('st-provider').value, ollamaModel: $('st-omodel').value.trim(), ollamaUrl: $('st-ourl').value.trim(), localBudgetChars: Number($('st-obudget').value), privacyAccepted: $('st-privacy').checked, model: $('st-model').value.trim(), budgetChars: Number($('st-budget').value), feriados, ferias };
     if ($('st-key').value.trim()) patch.apiKey = $('st-key').value.trim();
     state.settings = await api.updateSettings(patch);
     $('st-msg').textContent = 'Guardado.';
@@ -457,7 +468,7 @@ $('st-save').onclick = async () => {
     state.tasks = await api.listTasks();
     renderTaskGrid();
     state.settings = await api.getSettings();
-    if (!state.settings.privacyAccepted || !state.settings.hasApiKey) toast('Configurá tu clave de API y aceptá el aviso de confidencialidad en Ajustes para usar la IA.', 8000);
+    if (state.settings.provider === 'anthropic' && (!state.settings.privacyAccepted || !state.settings.hasApiKey)) toast('Configurá tu clave de API y aceptá el aviso de confidencialidad en Ajustes para usar la IA.', 8000);
   } catch (e) {
     fail(e);
   }

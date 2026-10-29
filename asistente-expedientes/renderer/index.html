@@ -96,6 +96,24 @@
       <section id="tab-ajustes" class="tab hidden">
         <h2>Ajustes</h2>
         <div class="card">
+          <h3>Motor de IA</h3>
+          <label>Qué IA usar
+            <select id="st-provider">
+              <option value="ollama">Local con Ollama — GRATIS y privado (nada sale de tu computadora)</option>
+              <option value="anthropic">Nube con Claude (API de Anthropic) — paga, más potente</option>
+            </select>
+          </label>
+          <div id="box-ollama">
+            <div class="grid">
+              <label>Modelo local<input id="st-omodel" placeholder="qwen2.5:7b"></label>
+              <label>Dirección de Ollama<input id="st-ourl"></label>
+              <label>Texto por consulta (caracteres)<input id="st-obudget" type="number" min="8000" step="4000"></label>
+            </div>
+            <p class="muted small">Primero instalá Ollama (ollama.com) y descargá el modelo con <code>ollama pull qwen2.5:7b</code>. Con 16 GB de RAM andan bien los modelos de 7-8 mil millones de parámetros; los más grandes dan mejores resultados si tu equipo los soporta. Los modelos locales son menos precisos que los de la nube: por eso la app verifica cada cita contra el expediente.</p>
+          </div>
+        </div>
+        <div id="box-cloud">
+        <div class="card">
           <h3>Confidencialidad</h3>
           <p>Al ejecutar una tarea, el texto de los documentos seleccionados se envía a la API de Anthropic para ser procesado. Los expedientes contienen datos personales y secreto profesional: antes de usar esta herramienta con casos reales, verificá los términos de tratamiento de datos de tu cuenta de API y las obligaciones de reserva que correspondan, y considerá anonimizar a las partes.</p>
           <label class="check"><input id="st-privacy" type="checkbox"> Entiendo y acepto que el contenido de los documentos seleccionados se envíe a la API de IA.</label>
@@ -108,6 +126,7 @@
             <label>Límite de texto por consulta (caracteres)<input id="st-budget" type="number" min="20000" step="10000"></label>
           </div>
           <div class="muted small" id="st-keystate"></div>
+        </div>
         </div>
         <div class="card">
           <h3>Calendario judicial</h3>

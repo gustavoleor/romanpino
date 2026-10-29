@@ -190,6 +190,10 @@ test('servicio: exige aceptar confidencialidad, guarda clave cifrada y no la exp
   });
   const opened = await svc.openCase(path.join(dir, 'caso'));
   assert.equal(opened.docs.length, 5);
+  assert.equal(svc.getSettings().provider, 'ollama');
+  await svc.run('resumen', {}); // modo local: no exige aviso de nube
+  called = 0;
+  svc.updateSettings({ provider: 'anthropic' });
   await assert.rejects(() => svc.run('resumen', {}), /confidencialidad/);
   svc.updateSettings({ privacyAccepted: true, apiKey: 'sk-ant-secreta' });
   assert.equal(svc.apiKey(), 'sk-ant-secreta');

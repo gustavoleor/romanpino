@@ -7,12 +7,16 @@ const crypto = require('node:crypto');
 const { Case } = require('./casestore');
 const { runTask, chronologyMarkdown } = require('./tasks');
 const { TASKS } = require('./prompts');
-const { createAnthropicLlm, DEFAULT_MODEL } = require('./llm');
+const { createAnthropicLlm, createOllamaLlm, DEFAULT_MODEL } = require('./llm');
 const { computeDeadline, makeCalendar, dueSoon, toIcs } = require('./deadlines');
 const { markdownToDocxBuffer } = require('./exporter');
 const { DEFAULT_BUDGET_CHARS } = require('./context');
 
 const DEFAULT_SETTINGS = {
+  provider: 'ollama', // 'ollama' (local, gratis) | 'anthropic' (nube, paga)
+  ollamaUrl: 'http://127.0.0.1:11434',
+  ollamaModel: 'qwen2.5:7b',
+  localBudgetChars: 36000,
   model: DEFAULT_MODEL,
   budgetChars: DEFAULT_BUDGET_CHARS,
   feriados: [], // ["2026-12-08", ...] cargados por el usuario
@@ -30,7 +34,12 @@ class AppService {
     this.settingsFile = settingsFile;
     this.encrypt = encrypt;
     this.decrypt = decrypt;
-    this.llmFactory = llmFactory || ((s) => createAnthropicLlm({ apiKey: this.apiKey(), model: s.model }));
+    this.llmFactory =
+      llmFactory ||
+      ((s) =>
+        s.provider === 'anthropic'
+          ? createAnthropicLlm({ apiKey: this.apiKey(), model: s.model })
+          : createOllamaLlm({ baseUrl: s.ollamaUrl, model: s.ollamaModel, budgetChars: s.localBudgetChars }));
     this.current = null;
     this.settings = { ...DEFAULT_SETTINGS };
     try {
@@ -54,7 +63,7 @@ class AppService {
   updateSettings(patch) {
     const { apiKey, ...rest } = patch;
     if (typeof apiKey === 'string') this.settings.apiKeyEnc = apiKey.trim() ? this.encrypt(apiKey.trim()) : null;
-    for (const k of ['model', 'budgetChars', 'feriados', 'ferias', 'privacyAccepted']) if (k in rest) this.settings[k] = rest[k];
+    for (const k of ['provider', 'ollamaUrl', 'ollamaModel', 'localBudgetChars', 'model', 'budgetChars', 'feriados', 'ferias', 'privacyAccepted']) if (k in rest) this.settings[k] = rest[k];
     this._saveSettings();
     return this.getSettings();
   }
@@ -101,9 +110,10 @@ class AppService {
   // ---------- IA ----------
   async run(taskId, params, { onText, signal } = {}) {
     const c = this._need();
-    if (!this.settings.privacyAccepted) throw new Error('Antes de usar la IA debés aceptar el aviso de confidencialidad (Ajustes).');
+    const cloud = this.settings.provider === 'anthropic';
+    if (cloud && !this.settings.privacyAccepted) throw new Error('Antes de usar la IA debés aceptar el aviso de confidencialidad (Ajustes).');
     const llm = this.llmFactory(this.settings);
-    return runTask({ caseObj: c, taskId, params, llm, budget: this.settings.budgetChars, onText, signal });
+    return runTask({ caseObj: c, taskId, params, llm, budget: cloud ? this.settings.budgetChars : this.settings.localBudgetChars, onText, signal });
   }
 
   async exportDocx(markdown, filePath, title) {

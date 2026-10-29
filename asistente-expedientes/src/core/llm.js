@@ -36,4 +36,67 @@ function createAnthropicLlm({ apiKey, model = DEFAULT_MODEL, maxTokens = 16000 }
   };
 }
 
-module.exports = { createAnthropicLlm, DEFAULT_MODEL };
+/**
+ * IA local con Ollama (gratis, sin enviar nada a internet). Usa la API nativa para fijar num_ctx:
+ * por defecto Ollama trunca el contexto en silencio a 2-4k tokens, lo que arruinaría el análisis.
+ */
+function createOllamaLlm({ baseUrl = 'http://127.0.0.1:11434', model = 'qwen2.5:7b', budgetChars = 36000 }) {
+  const numCtx = Math.min(65536, Math.max(8192, Math.ceil(budgetChars / 3) + 6000));
+  return {
+    model,
+    async complete({ system, context, instruction, onText, signal }) {
+      let res;
+      try {
+        res = await fetch(baseUrl.replace(/\/$/, '') + '/api/chat', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          signal,
+          body: JSON.stringify({
+            model,
+            stream: true,
+            messages: [
+              { role: 'system', content: system },
+              { role: 'user', content: (context ? context + '\n\n' : '') + instruction },
+            ],
+            options: { num_ctx: numCtx, num_predict: 4096, temperature: 0.2 },
+          }),
+        });
+      } catch (e) {
+        if (e.name === 'AbortError') throw e;
+        throw new Error('No se pudo conectar con Ollama. Verificá que esté instalado y abierto (ícono de la llama junto al reloj).');
+      }
+      if (!res.ok) {
+        const detail = await res.text().catch(() => '');
+        if (res.status === 404) throw new Error(`El modelo «${model}» no está descargado. En la terminal ejecutá: ollama pull ${model}`);
+        throw new Error(`Ollama respondió ${res.status}: ${detail.slice(0, 200)}`);
+      }
+      const dec = new TextDecoder();
+      let buf = '';
+      let text = '';
+      let last = {};
+      for await (const chunk of res.body) {
+        buf += dec.decode(chunk, { stream: true });
+        let i;
+        while ((i = buf.indexOf('\n')) >= 0) {
+          const line = buf.slice(0, i).trim();
+          buf = buf.slice(i + 1);
+          if (!line) continue;
+          const j = JSON.parse(line);
+          if (j.error) throw new Error('Ollama: ' + j.error);
+          if (j.message && j.message.content) {
+            text += j.message.content;
+            if (onText) onText(j.message.content);
+          }
+          if (j.done) last = j;
+        }
+      }
+      return {
+        text,
+        truncated: last.done_reason === 'length',
+        usage: { input_tokens: last.prompt_eval_count, output_tokens: last.eval_count },
+      };
+    },
+  };
+}
+
+module.exports = { createAnthropicLlm, createOllamaLlm, DEFAULT_MODEL };
