@@ -1,0 +1,5 @@
+node_modules/
+dist/
+ejemplo-expediente/
+.asistente/
+*.log

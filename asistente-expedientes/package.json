@@ -1,0 +1,47 @@
+{
+  "name": "asistente-expedientes",
+  "version": "0.1.0",
+  "description": "Asistente jurídico con IA para el análisis de expedientes judiciales (aplicación de escritorio)",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test test/*.test.js",
+    "dist": "electron-builder",
+    "demo": "node scripts/make-demo.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.60.0",
+    "docx": "^9.0.0",
+    "mammoth": "^1.8.0",
+    "pdfjs-dist": "^4.10.38"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "ar.estudio.asistente-expedientes",
+    "productName": "Asistente de Expedientes",
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**",
+      "src/**",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "author": "Estudio Roman Pino"
+}
